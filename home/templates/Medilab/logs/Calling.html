@@ -1,0 +1,170 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Martenity </title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="{% static 'logassets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'logassets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'logassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'logassets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/css/core.css' %}" rel="stylesheet">
+    <link href="{% static 'logassets/css/icon-font.css' %}" rel="stylesheet">
+  
+    <!-- =======================================================
+    * Template Name: NiceAdmin - v2.2.0
+    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+  </head>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Martenelogy </span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+        
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'appointment' %}">
+        <i class="bi bi-command"></i>
+        <span>Appointments</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'animalReg' %}">
+        <i class="bi bi-command"></i>
+        <span>Predictions</span>
+      </a>
+    </li>
+
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'receipt' %}">
+        <i class="bi bi-command"></i>
+        <span>Receipts</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'logout' %}">
+        <i class="bi bi-command"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+<body>
+
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+
+  <div class="pd-10">
+    <div class="error-page-wrap text-center">
+      <h1><i class="fa fa-phone"></i></h1>
+      <p>Calling Doctor
+      <div class="spinner-grow"  style="width: 1rem; height:  1rem" role="status">
+        <span class="sr-only">loading...</span>
+      </div>
+      <div class="spinner-grow"  style="width: 1rem; height:  1rem" role="status">
+        <span class="sr-only">loading...</span>
+      </div>
+      <div class="spinner-grow"  style="width: 1rem; height:  1rem" role="status">
+        <span class="sr-only">loading...</span>
+      </div>
+      <div class="spinner-grow"  style="width: 1rem; height:  1rem" role="status">
+        <span class="sr-only">loading...</span>
+      </div>
+      <div class="spinner-grow"  style="width: 1rem; height:  1rem" role="status">
+        <span class="sr-only">loading...</span>
+      </div>
+      <div class="spinner-grow"  style="width: 1rem; height:  1rem" role="status">
+        <span class="sr-only">loading...</span>
+      </div>
+      </p>
+      <div class="pt-20 mx-auto max-width-200">
+        <a href="{% url 'animalReg' %}" class="btn btn-primary btn-block btn-lg">Back To Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</section>
+
+</div>
+
+</main><!-- End #main -->
+
+<!-- Vendor JS Files -->
+<script src="{% static 'logassets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'logassets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'logassets/vendor/chart.js/chart.min.js' %}"></script>
+<script src="{% static 'logassets/vendor/echarts/echarts.min.js' %}"></script>
+<script src="{% static 'logassets/vendor/quill/quill.min.js' %}"></script>
+<script src="{% static 'logassets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+<script src="{% static 'logassets/vendor/tinymce/tinymce.min.js' %}"></script>
+<script src="{% static 'logassets/vendor/php-email-form/validate.js' %}"></script>
+
+<script src="{% static 'logassets/js/main.js' %}"></script>
+<script src="{% static 'assets/js/core.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Martenity </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'logassets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'logassets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'logassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'logassets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'logassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'logassets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'logassets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'logassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'logassets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'logassets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Martenelogy </span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+        
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'appointment' %}">
+        <i class="bi bi-command"></i>
+        <span>Appointments</span>
+      </a>
+    </li>
+
+
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'receipt' %}">
+        <i class="bi bi-command"></i>
+        <span>Receipts</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'logout' %}">
+        <i class="bi bi-command"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+<main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+
+              <div class="card mb-3 cardbg">
+  
+                <div class="card-body">
+  
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Martenal Risk Predictions</h5>
+                    <p class="text-center small">Enter the specified details</p>
+                  </div>
+
+                  <!-- Vertically centered Modal -->
+              <button style="display: none;" id="myBtn2"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                Vertically centered
+              </button>
+              <div class="modal fade" id="verticalycentered" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-center">Result</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      {% if result is not None %}
+                      {{result}}
+                      <p>{{suggestion}}</p>
+                      {% endif %} 
+                    </div>
+                    <div class="modal-footer">
+                      <a type="button" class="btn btn-primary" href="{% url 'calling' %}">Call</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Vertically centered Modal-->
+  
+                  <form action="{% url 'prediction' %}" method ="POST">
+                    {% csrf_token %}
+  
+                    <div class="col-12">
+                      <label for="age" class="form-label">Age</label>
+                      <input type="text" name="age" class="form-control" id="age" required>
+                      <div class="invalid-feedback">Please enter your age!</div>
+                    </div>
+  
+                    <div class="col-12">
+                      <label for="systolicBP" class="form-label">SystolicBP</label>
+                      <input type="text" name="systolicBP" class="form-control" id="systolicBP" required>
+                      <div class="invalid-feedback">Please enter your SystolicBP!</div>
+                    </div>
+  
+                    
+                    <div class="col-12">
+                      <label for="diastolicBP" class="form-label">DiastolicBP</label>
+                        <input type="text" name="diastolicBP" class="form-control" id="diastolicBP" required>
+                        <div class="invalid-feedback">Please choose a DiastolicBP.</div>
+                      
+                    </div>
+  
+                    <div class="col-12">
+                      <label for="BS" class="form-label">BS</label>
+                      <input type="text" name="BS" class="form-control" id="BS" required>
+                      <div class="invalid-feedback">Please enter a valid BS!</div>
+                    </div>
+  
+                    <div class="col-12">
+                      <label for="BodyTemp" class="form-label">BodyTemp</label>
+                      <input type="text" name="BodyTemp" class="form-control" id="BodyTemp" required>
+                      <div class="invalid-feedback">Please enter your location!</div>
+                    </div>
+  
+                
+                    
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Predict</button>
+                    </div>
+                  </form>
+  
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  
+</main><!-- End #main -->
+
+                   
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="{% static 'assets/js/jquery-3.4.1.min.js' %}"></script>
+  {% if result is not None %}
+  <script>
+    $(document).ready(function(){
+    $("#myBtn2").trigger("click");
+});
+
+  </script>         
+{% endif %}  
+  <!-- Vendor JS Files -->
+  <script src="{% static 'logassets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'logassets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'logassets/vendor/chart.js/chart.min.js' %}"></script>
+  <script src="{% static 'logassets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'logassets/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'logassets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'logassets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'logassets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'logassets/js/main.js' %}"></script>
+  <script src="{% static 'logassets/js/custom.js' %}"></script>
+  
+</body>
+
+</html>
